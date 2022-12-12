@@ -29,19 +29,20 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   let monthPayment;
   let totalAmount;
 
-  if (
+ if (
     isNaN(percent) ||
     isNaN(contribution) ||
     isNaN(amount) ||
-    isNaN(countMonth)
-  ) {
-    console.log('Введите, пожалуйста, данные в числовом виде')
-   return false;
-  }
+    isNaN(countMonths)
+    ) {
+       console.log('Один из параметров содержит неверное значение');
+       return false;
+    }
+
   percent = (percent / 100) / 12;
   bodyCredit = amount - contribution;
   monthPayment = bodyCredit * (percent + (percent / ((Math.pow((1 + percent), countMonths)) - 1)));
-  totalAmount = parseFloat ((monthPayment * countMonths).toFixed(2));
+  totalAmount = parseFloat((monthPayment * countMonths).toFixed(2));
 
   return totalAmount;
 }
