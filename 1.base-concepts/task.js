@@ -36,8 +36,8 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
     isNaN(countMonth)
   ) {
     console.log('Введите, пожалуйста, данные в числовом виде')
-  } return false;
-
+   return false;
+  }
   percent = (percent / 100) / 12;
   bodyCredit = amount - contribution;
   monthPayment = bodyCredit * (percent + (percent / ((Math.pow((1 + percent), countMonths)) - 1)));
