@@ -16,7 +16,7 @@ function getArrayParams(...arr) {
     sum += arr[i];
   }
 
-  avg = sum / (arr.length + 1);
+  avg = sum / (arr.length);
 
   avg = avg.toFixed(2);
 
